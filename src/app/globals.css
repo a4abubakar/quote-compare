@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: <html class="dark"> is set by the inline script in layout.tsx. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --border: #d5dce6;
+  --control-border: #64748b;
+  --fg: #0f172a;
+  --muted: #475569;
+  --primary: #0f766e;
+  --primary-hover: #115e59;
+  --primary-fg: #ffffff;
+  --primary-soft: #ccfbf1;
+  --primary-soft-fg: #134e4a;
+  --accent: #b45309;
+  --danger: #b91c1c;
+  --danger-soft: #fee2e2;
+  --success: #15803d;
+  --ring: #0f766e;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #0a111f;
+  --surface: #111a2c;
+  --surface-2: #18233a;
+  --border: #2a3753;
+  --control-border: #7f8fb0;
+  --fg: #e8edf6;
+  --muted: #a5b2c9;
+  --primary: #2dd4bf;
+  --primary-hover: #5eead4;
+  --primary-fg: #04201c;
+  --primary-soft: #0f3a3a;
+  --primary-soft-fg: #99f6e4;
+  --accent: #fbbf24;
+  --danger: #fca5a5;
+  --danger-soft: #3b1418;
+  --success: #4ade80;
+  --ring: #5eead4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-control: var(--control-border);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-fg: var(--primary-fg);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-fg: var(--primary-soft-fg);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-success: var(--success);
+  --color-ring: var(--ring);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus for everything keyboard-operable. */
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Range inputs: keep the native control, theme the accent. */
+input[type="range"] {
+  accent-color: var(--primary);
+}
+
+dialog::backdrop {
+  background: rgb(2 6 23 / 0.6);
+}
+
+@keyframes skeleton-pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  background: var(--surface-2);
+  border-radius: 0.5rem;
+  animation: skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
