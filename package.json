@@ -2,6 +2,18 @@
   "name": "quote-compare",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Muhammad Abubaker Siddiq",
+    "url": "https://github.com/a4abubakar"
+  },
+  "homepage": "https://quote-compare-xi.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a4abubakar/quote-compare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/a4abubakar/quote-compare/issues"
+  },
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",

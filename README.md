@@ -108,3 +108,11 @@ npm run screenshots  # needs the app running on :3001
 - Debounce and virtualise the plan list if the catalogue grows, and move filtering server-side at that point.
 - Persist saved comparisons, add "email me this quote", and localise to Arabic with RTL support.
 - Per-insurer eligibility reasons ("not offered because the car is older than 12 years") instead of silently hiding plans.
+
+## Author
+
+**Muhammad Abubaker Siddiq**, Senior Frontend Engineer (React, Next.js, TypeScript)
+
+- GitHub: [@a4abubakar](https://github.com/a4abubakar)
+- Portfolio: https://portfolio-next-six-tau.vercel.app
+- LinkedIn: https://www.linkedin.com/in/muhammad-abubaker-siddiq-27b37615b
