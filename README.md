@@ -6,8 +6,8 @@ A multi-step car insurance quote form that turns into a filterable, sortable, sh
 | --- | --- |
 | ![Results page, light, desktop](docs/screenshots/results-light-desktop.png) | ![Results page, dark, mobile](docs/screenshots/results-dark-mobile.png) |
 
-- Live demo: TODO
-- GitHub: TODO
+- Live demo: https://quote-compare-xi.vercel.app
+- GitHub: https://github.com/a4abubakar/quote-compare
 
 ## Screenshots
 
